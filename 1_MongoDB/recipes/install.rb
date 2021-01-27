@@ -13,6 +13,7 @@
 ##########################################################################
 #
 
+
 # Create a /etc/yum.repos.d/mongodb.repo file to hold the following configuration information for the MongoDB repository:
 #
 # If you are running a 64-bit system, use the following configuration:
@@ -42,3 +43,16 @@
 # ensure that MongoDB will start following a system reboot by issuing the following command:
 #
 # sudo chkconfig mongod on#
+
+
+package 'mongodb-server' do
+        action :install
+end
+
+package 'mongodb-dev' do
+        action :install
+end
+
+service 'mongodb' do
+        action [ :enable, :start ]
+end	
