@@ -37,7 +37,9 @@ transport:
 
 suites:
   - name: default   
-
+    run_list:
+      - recipe[4_Windows::window_admin_logon]
+      - recipe[4_Windows::allow_rds_logon]
     verifier:
       inspec_tests:
         - test/integration/default
