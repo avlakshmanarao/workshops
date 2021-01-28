@@ -14,12 +14,12 @@ package "python" do
   action :install
 end
 
-#mysql_service 'default' do
-#  port '3306'
-#  version '8.0'
-#  initial_root_password 'change me'
-#  action [:create, :start]
-#end
+mysql_service 'default' do
+  port '3306'
+  version '8.0'
+  initial_root_password 'change me'
+  action [:create, :start]
+end
 
 git "download_app" do
   repository 'git://github.com/chef-training/Awesome-Appliance-Repair.git'  
